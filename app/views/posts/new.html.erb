@@ -1,5 +1,6 @@
 <h1>レビューを書く</h1>
   <%= form_with model: @post, local: true do |form| %>
+  <%= render 'layouts/error_messages', model: form.object %>
     <p>
       <%= form.label :映画のタイトル %><br>
       <%= form.text_field :title %>
@@ -11,6 +12,6 @@
     </p>
    
     <p>
-      <%= form.submit %>
+      <%= form.submit "投稿する"%>
     </p>
   <% end %>
