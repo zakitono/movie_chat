@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MovieChat</title>
+    <title>Movie Chat</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,24 +9,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body> 
-  <header>
-      <nav>
-          <% if user_signed_in? %>
-            <strong><%= link_to current_user.username, posts_show_path %></strong>
-            <%= link_to 'プロフィール変更', edit_user_registration_path %>
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-            <%= link_to '新規投稿', new_post_path %>
-          <% else %>
-            <%= link_to 'サインアップ', new_user_registration_path %>
-            <%= link_to 'ログイン', new_user_session_path %>
-            <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
-          <% end %>
-      </nav>
-    </header>
-    <p class="notice"><%= notice %></p>
+  <body>
+    <%= render partial: "/shared/header" %>
+    <%= render partial: "/shared/notifications" %>
     <p class="alert"><%= alert %></p>
     
     <%= yield %>
+    <%= render partial: "/shared/footer" %>
   </body>
 </html>
