@@ -13,7 +13,9 @@
   </tr>
   <tr>
     <td><%= post.content %></td>
-    <td><%= link_to "削除", post_path(post), method: :delete, data: { confirm: "#{post.title}のレビューを削除してもよろしいですか？" } %></td> 
+    <% if user_signed_in? && current_user.id == post.user_id %>
+      <td><%= link_to "削除", post_path(post), method: :delete, data: { confirm: "#{post.title}のレビューを削除してもよろしいですか？" } %></td> 
+    <% end %>
   </tr>
   <% end %>
 </table>
