@@ -23,11 +23,9 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    if @post.user_id == current_user.id
+    if @post.present?
       @post.destroy
       redirect_to request.referer
-    else
-        render 'index'
     end
   end
   
