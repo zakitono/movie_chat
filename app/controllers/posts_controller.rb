@@ -20,6 +20,14 @@ class PostsController < ApplicationController
         render 'new'
     end
   end
+
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.present?
+      @post.destroy
+      redirect_to request.referer
+    end
+  end
   
   private
     def post_params
