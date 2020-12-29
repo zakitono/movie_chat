@@ -7,7 +7,7 @@
 <p><%= @user.movie_c %></p>
 <%= link_to '変更', edit_user_registration_path %>
 
-<h1><%= @user.username %>さんの、すべてのレビュー</h1>
+<h1>書いたレビュー</h1>
 <table>
     <% @user.posts.each do |post| %>
     <tr>
@@ -38,7 +38,7 @@
 <p><%= @user.movie_c %></p>
 <a href='#'>チャットする</a>
 
-<h1><%= @user.username %>さんの、すべてのレビュー</h1>
+<h1>書いたレビュー</h1>
 <table>
     <% @user.posts.each do |post| %>
     <tr>
