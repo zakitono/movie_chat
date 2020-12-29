@@ -2,6 +2,10 @@ ja:
   activerecord:
     attributes:
       user:
+        username: ユーザー名
+        movie_a: おすすめの映画その１
+        movie_b: おすすめの映画その2
+        movie_c: おすすめの映画その3
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
         confirmed_at: パスワード確認時刻
