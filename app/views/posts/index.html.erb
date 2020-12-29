@@ -6,7 +6,7 @@
     <th>ユーザー名</th>
   </tr>
   <tr>
-    <td><%= post.user.username %></td>
+    <td><%= link_to(post.user.username, "/users/#{post.user.id}") %></td>
   </tr>
   <tr>
     <th>映画のタイトル</th>
