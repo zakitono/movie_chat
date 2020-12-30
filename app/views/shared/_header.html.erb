@@ -4,6 +4,15 @@
       <%# ルートパスへのリンクを設置 %>
       <span><%= link_to "Movie Chat", "/posts" %></span>
     </h1>
+
+    <ul class="header__bar__user_nav">
+      <li class="user_name">
+        <%= search_form_for @search do |f| %>
+        <%= f.search_field :title_cont %>
+        <%= f.submit %>
+        <% end %>
+      </li>
+    </ul>
     <%# ログイン状態に応じて表記を変更すること %>
     <% if user_signed_in? %>
     <ul class="header__bar__user_nav">
