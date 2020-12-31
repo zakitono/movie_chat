@@ -1,5 +1,9 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
+  has_many :entries
+  has_many :messages
+  has_many :rooms, through: :entries
+  
   validates :username, presence: true
   validates :movie_a, length: { maximum: 50 }
   validates :movie_b, length: { maximum: 50 }
