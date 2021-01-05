@@ -12,8 +12,11 @@ document.addEventListener 'turbolinks:load', ->
       $('#messages').append data['message']
     speak: (message) ->
         @perform 'speak', message: message
-    $(document).on 'click', '.chat_sendbtn', (event) ->
-          App.room.speak $('.form-control').val();
-          $('.form-control').val('');
-          event.preventDefault()
+    $('#chat-input').on 'keypress', (event) ->
+      #return キーのキーコードが13
+      if event.keyCode is 13
+        #speakメソッド,event.target.valueを引数に.
+        App.room.speak event.target.value
+        event.target.value = ''
+        event.preventDefault()
 
