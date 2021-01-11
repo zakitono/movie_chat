@@ -1,0 +1,25 @@
+<p class="<%= message.id %>" style= "margin-top: 0;">
+    <%= message.user.username %>
+</p>
+<p class="<%= message.id %>">
+    <span class="balloon1-top">
+        <h7 class="dm_content"><%= message.content %></h7><br>
+        <h7 class="time-stamp"><%= message.created_at.strftime("%Y/%m/%d %H:%M") %></h7>
+    </span>
+</p><br>
+
+<!-- メッセージの表示位置を指定する -->
+<script>
+    //メッセージのユーザーidを取ってくる
+    var message = <%= message.user.id %>;
+    //id="current_user"の内容を取得
+    var dm_user = document.getElementById('current_user');
+    //dm_userのdata-idを取得する
+    var current_user = dm_user.getAttribute('data-id');
+    //dm_userがログインユーザーであれば右に表示する
+    if(message == current_user){
+      $('p.' + <%= message.id %>).css('text-align', 'right');
+    }else{
+      $('p.' + <%= message.id %>).css('text-align', 'left');
+    }
+</script>
