@@ -1,0 +1,126 @@
+.user_wrapper {
+    width: $fix_width;
+    height: 100%;
+    margin: 0 auto;
+    & h3 {
+      text-align: center;
+      font-size: $font_size_h3;
+    }
+    &__header {
+      padding: 0 160px;
+      .back_link {
+        margin: 16px 48px 12px;
+      }
+    }
+    &__content {
+      margin: 0 160px;
+  
+    // 投稿フォーム
+      &__user_form {
+        padding: 48px;
+        border: $border_style_default;
+        .form_area {
+          padding: 40px 40px 0;
+          &__field {
+            margin: 0 auto;
+            & textarea {
+              width: 482px;
+              padding: 8px;
+            }
+          }
+          &__action {
+            margin-top: 24px;
+            text-align: center;
+            &__btn {
+              height: 50px;
+              padding: 0 30px;
+              line-height: 50px;
+              letter-spacing: 1px;
+              text-align: center;
+              border: none;
+              border-radius: 25px;
+              background-color: $color_theme;
+              color: white;
+              cursor: pointer;
+              &:hover {
+                opacity: 0.8;
+                transition: 0.5s;  
+              }
+              &:focus {
+                outline: none;
+                border-radius: 25px;
+                box-shadow: $shadow_focus;
+              }
+            }
+          }
+        }
+      }
+    // 投稿一覧
+      &__user_list {
+        padding: 48px;
+        & a {
+          text-decoration: none;
+        }
+        .user {
+          margin-bottom: 12px;
+          border: $border_style_default;
+          border-radius: 3px;
+          box-shadow: $shadow_content;
+          &__middle_box {
+            padding: 8px 24px;
+            font-size: $font_size_content;
+            & span {
+              white-space: pre-wrap;
+            }
+          }
+          &__bottom_box {
+            display: flex;
+            position: relative;
+            height: 48px;
+            padding: 8px 24px;
+            font-size: $font_size_icon;
+            &__user_actions {
+              position: absolute;
+              left: 32px;
+              display: flex;
+              padding: 0 12px;
+              cursor: pointer;
+              & li {
+                width: 40px;
+                margin-right: 80px;
+                & span {
+                  font-size: $font_size_defalt;
+                }
+              }
+            }
+            &__admin_actions {
+              right: 24px;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 80px;
+              font-size: $font_size_defalt;
+              & a {
+                color: $color_link;
+              }
+              & :hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .movies{
+    font-size: $font_size_content;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .item{
+    border: $border_style_default;
+    padding: 10px;
+    margin: 5px;
+  }
