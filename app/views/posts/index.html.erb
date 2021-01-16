@@ -1,28 +1,29 @@
-<h1>すべてのレビュー</h1>
-<%# <%= link_to 'New Post!', new_post_path %>
-<table>
-  <% @posts.each do |post| %>
-  <tr>
-    <th>ユーザー名</th>
-  </tr>
-  <tr>
-    <td><%= link_to(post.user.username, "/users/#{post.user.id}") %></td>
-  </tr>
-  <tr>
-    <th>映画のタイトル</th>
-  </tr>
-  <tr>
-    <td><%= post.title %></td>
-  </tr>
-  <tr>
-    <th align="left">レビュー</th>
-  </tr>
-  <tr>
-    <td><%= post.content %></td>
-    <% if user_signed_in? && current_user.id == post.user_id %>
-    <td><%= link_to "削除", post_path(post), method: :delete, data: { confirm: "#{post.title}のレビューを削除してもよろしいですか？" } %>
-    </td>
-    <% end %>
-  </tr>
-  <% end %>
-</table>
+<div class="post_wrapper">
+  <div class="post_wrapper__header">
+    <h3>
+      <span>すべてのレビュー(感想)</span>
+    </h3>
+  </div>
+  <div class="post_wrapper__content">
+    <ul class="post_wrapper__content__post_list">
+        <% @posts.each do |post| %>
+      <li>
+        <div class="post">
+          <span>ユーザー名:<%= link_to(post.user.username, "/users/#{post.user.id}") %></span>
+          <div class="post__middle_box">
+            <span>映画のタイトル : <%= post.title %></span></br>
+            <span>レビュー : <%= post.content %></span>
+              <% if user_signed_in? && current_user.id == post.user_id %>
+            <ul class="post__bottom_box__admin_actions">
+              <li>
+                <%= link_to "削除", post_path(post), method: :delete, data: { confirm: "#{post.title}のレビューを削除してもよろしいですか？" } %>
+              </li>
+            </ul>
+              <% end %>
+          </div>
+        </div>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,19 +1,26 @@
-<h1>レビューを書く</h1>
-  <%= form_with model: @post, local: true do |form| %>
-  <%= render 'layouts/error_messages', model: form.object %>
-    <p>
-      <%= form.label :映画のタイトル %><br>
-      <%= form.text_field :title %>
-    </p>
-   
-    <p>
-      <%= form.label :レビュー %><br>
-      <%= form.text_area :content %>
-    </p>
-
-    <%= form.hidden_field :user_id, value:current_user.id %> 
-   
-    <p>
-      <%= form.submit "投稿する"%>
-    </p>
-  <% end %>
+<div class="post_wrapper">
+  <div class="post_wrapper__content">
+    <div class="post_wrapper__content__post_form">    
+      <%= form_with model: @post, local: true do |form| %>
+        <h3>
+          <span>レビュー（感想）を書く</span>
+        </h3>
+        <div class="form_area">
+          <%= render 'layouts/error_messages', model: form.object %>
+          <div class="form_area__field">
+            <%= form.label :映画のタイトル %><br>
+            <%= form.text_field :title, placeholder: "映画のタイトルを入力", size: 50 %>
+          </div>
+          <div class="form_area__field">
+            <%= form.label :感想・レビュー %><br>
+            <%= form.text_area :content, placeholder: "映画の感想・レビューを入力", rows: 10  %>
+          </div>
+          <div class="form_area__action">
+            <%= form.hidden_field :user_id, value:current_user.id %>
+            <%= form.submit "投稿する", class: "form_area__action__btn" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
