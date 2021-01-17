@@ -6,6 +6,9 @@
   </div>
   <div class="post_wrapper__content">
     <ul class="post_wrapper__content__post_list">
+      <% if params[:q].present? && params[:q][:title_cont].present? %>
+        検索結果: <%= params[:q][:title_cont] %>
+      <% end %>
         <% @posts.each do |post| %>
       <li>
         <div class="post">
