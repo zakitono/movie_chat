@@ -8,7 +8,7 @@
     <ul class="header__bar__user_nav">
       <li class="user_name">
         <%= search_form_for @search do |f| %>
-        <%= f.search_field :title_cont %>
+        <%= f.search_field :title_cont, placeholder: " 映画のタイトル"%>
         <%= f.submit %>
         <% end %>
       </li>
@@ -17,7 +17,7 @@
     <% if user_signed_in? %>
     <ul class="header__bar__user_nav">
       <li class="user_name">
-        <span><%= link_to current_user.username, "/users/#{current_user.id}" %>さん</span>
+        <span><%= link_to current_user.username+"さん", "/users/#{current_user.id}" %></span>
       </li>
       <li class="header__bar__user_nav__btn">
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>

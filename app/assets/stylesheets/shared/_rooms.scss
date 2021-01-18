@@ -1,3 +1,35 @@
 .time-stamp {
     color: #C0C0C0;
 }
+.rooms{
+    margin:0 auto;
+    background-color:#fdfdfd;
+    padding:1em 2em;
+}
+.balloon1-top {
+    position: relative;
+    display: inline-block;
+    margin: 1.5em 0;
+    padding: 7px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    color: #555;
+    font-size: 16px;
+    background: #e0edff;
+    border-radius: 15px;
+  }
+  
+  .balloon1-top:before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    margin-left: -15px;
+    border: 15px solid transparent;
+    border-bottom: 15px solid #e0edff;
+  }
+  
+  .balloon1-top h7 {
+    margin: 0;
+    padding: 0;
+  }

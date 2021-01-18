@@ -21,7 +21,7 @@
         font-size: $font_size_h1;
         font-weight: bold;
         & a {
-          color: white;
+          color: rgb(34, 80, 250);
           text-decoration: none;
         }
       }
@@ -39,7 +39,7 @@
           & a {
             display: inline-block;
             height: 64px;
-            color: white;
+            color: rgb(102, 102, 102);
             text-decoration: none;
           }
         }
