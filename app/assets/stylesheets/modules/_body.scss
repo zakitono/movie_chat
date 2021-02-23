@@ -47,3 +47,9 @@
       margin-right: 4px;
     }
   }
+
+  .background{
+    overflow-y: auto; 
+    background-image: image-url("background.jpg");
+    background-size: cover;
+  }
