@@ -25,7 +25,8 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.mailer_sender = ENV["MAIL_USERNAME"]
-  config.mailer_sender = ENV["GMAIL_USERNAME"]
+  # config.mailer_sender = ENV["GMAIL_USERNAME"]
+  config.mailer_sender = Rails.application.credentials.gmail[:mail_address]
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
