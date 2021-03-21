@@ -68,3 +68,9 @@ gem 'devise-i18n'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'ransack'
+gem 'mini_racer'
+
+group :production, :staging do
+    gem 'unicorn', '5.4.1'
+end
+
