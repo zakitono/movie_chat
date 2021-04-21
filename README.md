@@ -2,14 +2,14 @@
 
 下記ページで公開中です。
 
-https://movies-chat.herokuapp.com/
+https://www.movies-chat.com/
 
 ## アプリ概要
 映画を観終わった後に感想を投稿して、他の人と感想を語り合う事ができるアプリです。
 Ruby on Railsで制作しました。
 
 作成した背景や想いなど、より詳細な情報は下記をご覧ください。  
-[ポートフォリオ解説]https://qiita.com/zakitono/private
+[ポートフォリオ解説]https://qiita.com/zakitono/private/b5612353c75796cf67cd
 
 ## 機能
 - <機能①>：ゲストログイン機能
