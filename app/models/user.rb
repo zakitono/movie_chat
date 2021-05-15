@@ -3,6 +3,8 @@ class User < ApplicationRecord
   has_many :entries
   has_many :messages
   has_many :rooms, through: :entries
+  has_many :likes, dependent: :destroy
+  has_many :like_posts, through: :likes, source: :post
   
   validates :username, presence: true
   validates :movie_a, length: { maximum: 50 }
@@ -30,5 +32,21 @@ class User < ApplicationRecord
           result = update_attributes(params, *options)
           clean_up_passwords
           result
+        end
+
+        def own?(object)
+          id == object.user_id
+        end
+
+        def like(post)
+          likes.find_or_create_by(post: post)
+        end
+
+        def like?(post)
+          like_posts.include?(post)
+        end
+
+        def unlike(post)
+          like_posts.delete(post)
         end
 end
