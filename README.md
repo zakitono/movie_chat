@@ -48,7 +48,7 @@ $ rails db:seed
 ```
 
 ## ER図
-![ER1 (movie_chat)](https://user-images.githubusercontent.com/71639603/118355728-8d9fe200-b5ac-11eb-89f4-56bfbd21d134.png)
+![ER図(movie_chat)](https://user-images.githubusercontent.com/71639603/118356027-43b7fb80-b5ae-11eb-9f42-3119a9bff5df.png)
 
 ## その他
 現在も開発を継続しており、順次実装予定です。  
