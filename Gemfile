@@ -69,6 +69,7 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'ransack'
 gem 'mini_racer'
+gem 'font-awesome-sass'
 
 group :production, :staging do
     gem 'unicorn', '5.4.1'

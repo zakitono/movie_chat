@@ -16,13 +16,25 @@
           <div class="post__middle_box">
             <span>映画のタイトル : <%= post.title %></span></br>
             <span>レビュー : <%= post.content %></span>
-              <% if user_signed_in? && current_user.id == post.user_id %>
+            <% if user_signed_in? && current_user.id == post.user_id %>
             <ul class="post__bottom_box__admin_actions">
               <li>
                 <%= link_to "削除", post_path(post), method: :delete, data: { confirm: "#{post.title}のレビューを削除してもよろしいですか？" } %>
               </li>
             </ul>
+            <% else%>
+              <ul class="post__bottom_box__admin_actions">
+                <li id="like-button-<%=post.id%>"> 
+                <% if current_user&.like?(post) %>
+                  <%= render 'likes/unlike_button', post: post%>
+                  <li><%= link_to "チャットしてみる", "/users/#{post.user.id}" %></li>
+                <% elsif  user_signed_in?%>
+                  <%= render 'likes/like_button', post: post%>
+                </li>
+                <li><%= link_to "チャットしてみる", "/users/#{post.user.id}" %></li>
+              </ul>
               <% end %>
+            <% end %>
           </div>
         </div>
         <% end %>
