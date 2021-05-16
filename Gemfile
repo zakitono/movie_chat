@@ -70,6 +70,7 @@ gem 'jquery-rails'
 gem 'ransack'
 gem 'mini_racer'
 gem 'font-awesome-sass'
+gem 'kaminari'
 
 group :production, :staging do
     gem 'unicorn', '5.4.1'
