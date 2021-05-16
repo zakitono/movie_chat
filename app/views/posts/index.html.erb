@@ -9,7 +9,7 @@
       <% if params[:q].present? && params[:q][:title_cont].present? %>
         検索結果: <%= params[:q][:title_cont] %>
       <% end %>
-        <% @posts.each do |post| %>
+      <% @posts.each do |post| %>
       <li>
         <div class="post">
           <span>ユーザー名:<%= link_to(post.user.username, "/users/#{post.user.id}") %></span>
@@ -37,8 +37,9 @@
             <% end %>
           </div>
         </div>
-        <% end %>
+      <% end %>
       </li>
+      <%= paginate @posts %>
     </ul>
   </div>
 </div>

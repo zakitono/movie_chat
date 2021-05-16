@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
     def set_search
         @search = Post.ransack(params[:q])
-        @posts = @search.result(distinct: true).order(created_at: "DESC").includes(:user)
+        @posts = @search.result(distinct: true).order(created_at: "DESC").includes(:user).page(params[:page]).per(5)
     end
     
     private
