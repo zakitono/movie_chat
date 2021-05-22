@@ -20,3 +20,8 @@ document.addEventListener 'turbolinks:load', ->
         event.target.value = ''
         event.preventDefault()
 
+    $('.chat_sendbtn').click ->
+        App.room.speak $('.form-control').val();
+        $('.form-control').val('');
+        event.preventDefault()
+
